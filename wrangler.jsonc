@@ -12,7 +12,7 @@
   // See DEPLOYMENT.md for the full first-deploy walkthrough (KV namespace
   // creation, setting the Chapa secret, `wrangler deploy`).
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "theambaaddis",
+  "name": "the-amba-addis-hotel",
   "main": "worker/src/index.js",
   "compatibility_date": "2026-08-01",
   "compatibility_flags": ["nodejs_compat"],
