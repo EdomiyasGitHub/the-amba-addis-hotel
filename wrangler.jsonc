@@ -26,12 +26,8 @@
 
   "kv_namespaces": [
     {
-      // Reservation records, keyed by Chapa tx_ref. Create this namespace
-      // with `wrangler kv namespace create RESERVATIONS` and paste the id
-      // it prints below — see DEPLOYMENT.md. The placeholder below will
-      // not work as-is.
       "binding": "RESERVATIONS",
-      "id": "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+      "id": "c2da1b68b51a4cac98746d4dd1f30919"
     }
   ]
 
