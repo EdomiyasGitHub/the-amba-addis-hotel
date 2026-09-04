@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- ==================== HEAD ==================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery | The Amba Addis, Addis Ababa</title>
+  <meta name="description" content="Browse photos of rooms, dining, amenities, and events at The Amba Addis boutique hotel in Addis Ababa, filterable by category.">
+  <link rel="canonical" href="https://theambaaddis.rann.workers.dev/gallery.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Amba Addis">
+  <meta property="og:title" content="Photo Gallery | The Amba Addis">
+  <meta property="og:description" content="Browse photos of rooms, dining, amenities, and events at The Amba Addis.">
+  <meta property="og:image" content="https://theambaaddis.rann.workers.dev/assets/images/og-default.svg">
+  <meta property="og:url" content="https://theambaaddis.rann.workers.dev/gallery.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo-mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+
+<!-- ==================== BODY ==================== -->
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="container-wide site-header__inner">
+      <a href="index.html" class="brand" aria-label="The Amba Addis — home">
+        <img src="assets/icons/logo-mark.svg" alt="" width="40" height="40" class="brand__mark">
+        <span class="brand__name-full">The Amba Addis <small>Addis&nbsp;Ababa</small></span>
+      </a>
+
+      <button type="button" class="nav-toggle" data-bs-toggle="collapse" data-bs-target="#primary-navigation" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+
+      <nav class="primary-nav collapse" id="primary-navigation" aria-label="Primary">
+        <ul class="primary-nav__list">
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="amenities.html">Amenities</a></li>
+          <li><a href="offers.html">Offers</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="booking.html" class="btn btn--primary header-cta">Book Your Stay</a>
+    </div>
+  </header>
+
+
+  <!-- ==================== MAIN ==================== -->
+  <main id="main">
+
+    <!-- ==================== PAGE HERO ==================== -->
+    <div class="container-wide">
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb" style="margin-top: var(--space-lg);">
+          <li><a href="index.html">Home</a></li>
+          <li>Gallery</li>
+        </ol>
+      </nav>
+
+      <div class="section-header">
+        <p class="eyebrow">Gallery</p>
+        <h1>A closer look.</h1>
+        <p class="lead">Filter by category, or browse everything at once.</p>
+      </div>
+    </div>
+
+
+    <!-- ==================== GALLERY ==================== -->
+    <section class="section--tight" aria-labelledby="gallery-heading">
+      <div class="container-wide">
+        <h2 id="gallery-heading" class="visually-hidden">Gallery</h2>
+
+        <div class="gallery-wrap">
+          <!-- CSS-only filter. No JavaScript is used for this interaction. -->
+          <div class="gallery-filter-bar" role="group" aria-label="Filter gallery by category">
+            <input type="radio" name="gallery-filter" id="filter-all" class="visually-hidden" checked>
+            <label for="filter-all" class="filter-pill">All</label>
+
+            <input type="radio" name="gallery-filter" id="filter-rooms" class="visually-hidden">
+            <label for="filter-rooms" class="filter-pill">Rooms</label>
+
+            <input type="radio" name="gallery-filter" id="filter-dining" class="visually-hidden">
+            <label for="filter-dining" class="filter-pill">Dining</label>
+
+            <input type="radio" name="gallery-filter" id="filter-amenities" class="visually-hidden">
+            <label for="filter-amenities" class="filter-pill">Amenities</label>
+
+            <input type="radio" name="gallery-filter" id="filter-events" class="visually-hidden">
+            <label for="filter-events" class="filter-pill">Events</label>
+
+            <input type="radio" name="gallery-filter" id="filter-hotel" class="visually-hidden">
+            <label for="filter-hotel" class="filter-pill">Hotel</label>
+          </div>
+
+          <div class="gallery-grid" role="list">
+            <figure class="gallery-item cat-hotel" role="listitem">
+              <img src="assets/images/hero-home.jpg" alt="Hotel exterior at dusk, illustrative placeholder photograph" width="1600" height="1000" loading="lazy">
+              <figcaption>Exterior, dusk</figcaption>
+            </figure>
+            <figure class="gallery-item cat-hotel" role="listitem">
+              <img src="assets/images/intro-facade-2.avif" alt="Arrival courtyard and facade, illustrative placeholder photograph" width="1200" height="1400" loading="lazy">
+              <figcaption>Arrival courtyard</figcaption>
+            </figure>
+            <figure class="gallery-item cat-hotel" role="listitem">
+              <img src="assets/images/gallery-lobby.webp" alt="Hotel lobby, illustrative placeholder photograph" width="1000" height="750" loading="lazy">
+              <figcaption>Lobby &amp; arrival</figcaption>
+            </figure>
+            <figure class="gallery-item cat-hotel" role="listitem">
+              <img src="assets/images/gallery-corridor.jpg" alt="Guest floor corridor, illustrative placeholder photograph" width="1000" height="750" loading="lazy">
+              <figcaption>Guest floor corridor</figcaption>
+            </figure>
+
+            <figure class="gallery-item cat-rooms" role="listitem">
+              <a href="room-detail.html"><img src="assets/images/room-amba-king.webp" alt="Amba Room, illustrative placeholder photograph" width="1000" height="750" loading="lazy"></a>
+              <figcaption>Amba Room</figcaption>
+            </figure>
+            <figure class="gallery-item cat-rooms" role="listitem">
+              <a href="room-detail.html"><img src="assets/images/room-amba-twin.jpg" alt="Amba Room Twin, illustrative placeholder photograph" width="1000" height="750" loading="lazy"></a>
+              <figcaption>Amba Room Twin</figcaption>
+            </figure>
+            <figure class="gallery-item cat-rooms" role="listitem">
+              <a href="room-detail.html"><img src="assets/images/room-garden-twin.jpg" alt="Garden Twin Room, illustrative placeholder photograph" width="1000" height="750" loading="lazy"></a>
+              <figcaption>Garden Twin Room</figcaption>
+            </figure>
+            <figure class="gallery-item cat-rooms" role="listitem">
+              <a href="room-detail.html"><img src="assets/images/room-executive-corner.jpg" alt="Executive Corner Room, illustrative placeholder photograph" width="1000" height="750" loading="lazy"></a>
+              <figcaption>Executive Corner Room</figcaption>
+            </figure>
+            <figure class="gallery-item cat-rooms" role="listitem">
+              <a href="room-detail.html"><img src="assets/images/room-highland-suite.jpg" alt="Highland Suite, illustrative placeholder photograph" width="1000" height="750" loading="lazy"></a>
+              <figcaption>Highland Suite</figcaption>
+            </figure>
+            <figure class="gallery-item cat-rooms" role="listitem">
+              <a href="room-detail.html"><img src="assets/images/room-ras-suite.jpg" alt="Ras Suite, illustrative placeholder photograph" width="1000" height="750" loading="lazy"></a>
+              <figcaption>Ras Suite</figcaption>
+            </figure>
+
+            <figure class="gallery-item cat-dining" role="listitem">
+              <a href="restaurant-detail.html"><img src="assets/images/dining-buna-vine.jpg" alt="Buna and Vine restaurant, illustrative placeholder photograph" width="1000" height="750" loading="lazy"></a>
+              <figcaption>Buna &amp; Vine</figcaption>
+            </figure>
+            <figure class="gallery-item cat-dining" role="listitem">
+              <a href="restaurant-detail.html"><img src="assets/images/dining-ridge.jpg" alt="The Ridge rooftop bar, illustrative placeholder photograph" width="1000" height="750" loading="lazy"></a>
+              <figcaption>The Ridge</figcaption>
+            </figure>
+            <figure class="gallery-item cat-dining" role="listitem">
+              <a href="restaurant-detail.html"><img src="assets/images/dining-enat-kitchen.jpg" alt="Enat Kitchen, illustrative placeholder photograph" width="1000" height="750" loading="lazy"></a>
+              <figcaption>Enat Kitchen</figcaption>
+            </figure>
+
+            <figure class="gallery-item cat-amenities" role="listitem">
+              <a href="amenities.html"><img src="assets/images/amenity-spa.jpg" alt="Highland Spa, illustrative placeholder photograph" width="900" height="700" loading="lazy"></a>
+              <figcaption>Highland Spa</figcaption>
+            </figure>
+            <figure class="gallery-item cat-amenities" role="listitem">
+              <a href="amenities.html"><img src="assets/images/amenity-pool.jpg" alt="Rooftop pool, illustrative placeholder photograph" width="900" height="700" loading="lazy"></a>
+              <figcaption>Rooftop Pool</figcaption>
+            </figure>
+            <figure class="gallery-item cat-amenities" role="listitem">
+              <a href="amenities.html"><img src="assets/images/amenity-fitness.jpg" alt="Fitness studio, illustrative placeholder photograph" width="900" height="700" loading="lazy"></a>
+              <figcaption>Fitness Studio</figcaption>
+            </figure>
+            <figure class="gallery-item cat-amenities" role="listitem">
+              <a href="amenities.html"><img src="assets/images/amenity-business.webp" alt="Business centre, illustrative placeholder photograph" width="900" height="700" loading="lazy"></a>
+              <figcaption>Business Centre</figcaption>
+            </figure>
+
+            <figure class="gallery-item cat-events" role="listitem">
+              <a href="amenities.html"><img src="assets/images/meetings-hall.avif" alt="Amba Ballroom, illustrative placeholder photograph" width="1200" height="800" loading="lazy"></a>
+              <figcaption>Amba Ballroom</figcaption>
+            </figure>
+            <figure class="gallery-item cat-events" role="listitem">
+              <a href="amenities.html"><img src="assets/images/event-ballroom-setup.jpg" alt="Conference setup in the Amba Ballroom, illustrative placeholder photograph" width="1200" height="800" loading="lazy"></a>
+              <figcaption>Conference setup</figcaption>
+            </figure>
+            <figure class="gallery-item cat-events" role="listitem">
+              <img src="assets/images/wedding-terrace.webp" alt="Terrace wedding setup, illustrative placeholder photograph" width="1200" height="800" loading="lazy">
+              <figcaption>Terrace wedding setup</figcaption>
+            </figure>
+            <figure class="gallery-item cat-events" role="listitem">
+              <img src="assets/images/event-outdoor-reception.jpg" alt="Outdoor terrace reception, illustrative placeholder photograph" width="1200" height="800" loading="lazy">
+              <figcaption>Outdoor reception</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== GALLERY CTA ==================== -->
+    <section class="section section--primary text-center" aria-labelledby="gallery-cta-heading">
+      <div class="container-wide">
+        <h2 id="gallery-cta-heading">Seen enough? Come see it in person.</h2>
+        <div class="hero__actions" style="justify-content: center;">
+          <a href="booking.html" class="btn btn--primary">Book Your Stay</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container-wide">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand" style="color: #fff; margin-bottom: var(--space-sm);">
+            <img src="assets/icons/logo-mark.svg" alt="" width="36" height="36" class="brand__mark">
+            <span class="brand__name-full">The Amba Addis</span>
+          </a>
+          <address>
+            Kazanchis Business District<br>
+            Ras Abebe Aregay Street<br>
+            Addis Ababa, Ethiopia<br>
+            <a href="tel:+251115550142">+251 11 555 0142</a><br>
+            <a href="mailto:stay@theambaaddis.rann.workers.dev">stay@theambaaddis.rann.workers.dev</a>
+          </address>
+          <div class="footer-map">
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=38.7425%2C9.0092%2C38.7625%2C9.0292&amp;layer=mapnik&amp;marker=9.0192%2C38.7525" title="Map showing the approximate location of The Amba Addis in Addis Ababa" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <ul class="footer-social" aria-label="Social media">
+            <li><a href="https://instagram.com/theambaaddis" aria-label="The Amba Addis on Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="https://facebook.com/theambaaddis" aria-label="The Amba Addis on Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="https://linkedin.com/company/theambaaddis" aria-label="The Amba Addis on LinkedIn" target="_blank" rel="noopener"><i class="bi bi-linkedin" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+
+        <nav aria-label="Explore">
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="amenities.html">Amenities</a></li>
+            <li><a href="offers.html">Offers</a></li>
+            <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Hotel">
+          <h2>Hotel</h2>
+          <ul>
+            <li><a href="booking.html">Book Your Stay</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h2>Stay in Touch</h2>
+          <p class="text-muted" style="color: #A9B7BF;">Offers and highland stories, a few times a year — no more.</p>
+          <form class="newsletter-form" action="#" method="post" data-success-message="Thanks for subscribing — you're on the list.">
+            <label for="footer-newsletter-email" class="visually-hidden">Email address</label>
+            <input type="email" id="footer-newsletter-email" name="email" placeholder="you@example.com" required>
+            <button type="submit" class="btn btn--primary">Sign Up</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; 2026 The Amba Addis.</p>
+        <ul class="footer-legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

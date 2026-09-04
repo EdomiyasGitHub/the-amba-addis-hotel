@@ -1,0 +1,19 @@
+# Files excluded from the deployed static-assets bucket (the ASSETS
+# binding in wrangler.jsonc). The Worker source itself is bundled and
+# deployed separately by `wrangler deploy` — it doesn't need to also be
+# served as a downloadable static file, and the docs/config below are
+# for developers, not site visitors.
+worker/
+wrangler.jsonc
+package.json
+package-lock.json
+node_modules/
+.wrangler/
+.git/
+.gitignore
+README.md
+BACKLOG.md
+design-direction.md
+PROJECT-NOTES.md
+DEPLOYMENT.md
+RESEARCH.md

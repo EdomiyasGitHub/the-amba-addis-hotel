@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ==================== HEAD ==================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Amba Addis | Boutique Hotel in Addis Ababa, Ethiopia</title>
+  <meta name="description" content="A boutique hotel above the city's rhythm — 86 rooms and suites, three dining outlets, and genuine Ethiopian hospitality in the heart of Addis Ababa.">
+
+
+  <!-- CANONICAL: theambaaddis.rann.workers.dev is the real target domain (Cloudflare Workers) — we update ONLY if the domain changes -->
+  <link rel="canonical" href="https://theambaaddis.rann.workers.dev/">
+
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Amba Addis">
+  <meta property="og:title" content="The Amba Addis | Boutique Hotel in Addis Ababa">
+  <meta property="og:description" content="A boutique hotel above the city's rhythm — thoughtfully designed rooms, genuine hospitality, in the heart of Addis Ababa.">
+  <meta property="og:image" content="https://theambaaddis.rann.workers.dev/assets/images/hero-home.jpg">
+  <meta property="og:url" content="https://theambaaddis.rann.workers.dev/">
+  <meta name="twitter:card" content="summary_large_image">
+
+
+  <!-- SVG Favicon for modern browsers -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo-mark.svg">
+
+
+  <!-- Two font families only that we swap for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+  <!-- Bootstrap 5 CSS for grid AND utility classes only (specified more in css/style.css header comment and README) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+
+  <!-- Structured data: Hotel. The Amba Addis is a fictional property built for this coursework project; every field below is fictional but a consistent business data, not a real listing. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "The Amba Addis",
+    "description": "Boutique hotel in Addis Ababa offering 86 rooms and suites, three dining outlets, a spa, and event facilities.",
+    "image": "https://theambaaddis.rann.workers.dev/assets/images/hero-home.jpg",
+    "url": "https://theambaaddis.rann.workers.dev/",
+    "telephone": "+251-11-555-0142",
+    "priceRange": "ETB 5,500 - ETB 22,000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kazanchis Business District, Ras Abebe Aregay Street",
+      "addressLocality": "Addis Ababa",
+      "addressCountry": "ET"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 9.0192,
+      "longitude": 38.7525
+    },
+    "starRating": { "@type": "Rating", "ratingValue": "5" },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Spa", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Rooftop Pool", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Airport Shuttle", "value": true }
+    ]
+  }
+  </script>
+</head>
+
+
+<!-- ==================== BODY ==================== -->
+<body>
+
+
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="container-wide site-header__inner">
+      <a href="index.html" class="brand" aria-label="The Amba Addis — home">
+        <img src="assets/icons/logo-mark.svg" alt="" width="40" height="40" class="brand__mark">
+        <span class="brand__name-full">The Amba Addis <small>Addis&nbsp;Ababa</small></span>
+      </a>
+
+      <button type="button" class="nav-toggle" data-bs-toggle="collapse" data-bs-target="#primary-navigation" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+
+      <nav class="primary-nav collapse" id="primary-navigation" aria-label="Primary">
+        <ul class="primary-nav__list">
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="amenities.html">Amenities</a></li>
+          <li><a href="offers.html">Offers</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="booking.html" class="btn btn--primary header-cta">Book Your Stay</a>
+    </div>
+  </header>
+
+
+  <!-- ==================== MAIN ==================== -->
+  <main id="main">
+
+
+    <!-- ==================== PAGE HERO ==================== -->
+    <section class="hero">
+      <div class="hero__media hero__media--parallax" style="--hero-bg: url('../assets/images/hero-home.jpg');">
+        <img src="assets/images/hero-home.jpg" alt="The Amba Addis hotel exterior at dusk, terraced facade lit warmly against the Addis Ababa skyline" width="1600" height="1000" fetchpriority="high">
+      </div>
+      <div class="container-wide hero__content">
+        <p class="eyebrow">Boutique Hotel · Addis Ababa</p>
+        <h1>A refined stay above the city&rsquo;s rhythm.</h1>
+        <p class="lead">Thoughtfully designed rooms, genuine hospitality, and a kitchen rooted in Ethiopian tradition — in the heart of Addis Ababa.</p>
+        <div class="hero__actions">
+          <a href="booking.html" class="btn btn--primary">Book Your Stay</a>
+          <a href="rooms.html" class="btn btn--secondary">Explore Rooms</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== BOOKING BAR ==================== -->
+    <div class="container-wide">
+      <section class="booking-bar" aria-labelledby="booking-heading">
+        <h2 id="booking-heading" class="visually-hidden">Check availability</h2>
+
+        <!-- We passes its fields to booking.html as a query string, which
+             pre-fills the reservation form there. -->
+        <form class="booking-bar__form" action="booking.html" method="get">
+          <div class="form-field">
+            <label for="bb-checkin">Check-in</label>
+            <input type="date" id="bb-checkin" name="checkin" data-role="check-in" required>
+          </div>
+          <div class="form-field">
+            <label for="bb-checkout">Check-out</label>
+            <input type="date" id="bb-checkout" name="checkout" data-role="check-out" required>
+          </div>
+
+          <fieldset class="form-field">
+            <legend>Adults</legend>
+            <select id="bb-adults" name="adults" aria-label="Adults">
+              <option value="1">1 Adult</option>
+              <option value="2" selected>2 Adults</option>
+              <option value="3">3 Adults</option>
+              <option value="4">4 Adults</option>
+            </select>
+          </fieldset>
+
+          <div class="form-field">
+            <label for="bb-children">Children</label>
+            <select id="bb-children" name="children">
+              <option value="0" selected>0 Children</option>
+              <option value="1">1 Child</option>
+              <option value="2">2 Children</option>
+              <option value="3">3 Children</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="bb-rooms">Rooms</label>
+            <select id="bb-rooms" name="rooms">
+              <option value="1" selected>1 Room</option>
+              <option value="2">2 Rooms</option>
+              <option value="3">3 Rooms</option>
+            </select>
+          </div>
+
+          <div class="form-field booking-bar__submit">
+            <label for="bb-submit" class="visually-hidden">Check availability</label>
+            <button type="submit" id="bb-submit" class="btn btn--primary btn--block">Check Availability</button>
+          </div>
+        </form>
+
+        <p class="booking-bar__demo-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          Frontend demonstration only — connects to a real booking engine in production.
+        </p>
+      </section>
+    </div>
+
+
+    <!-- ==================== INTRODUCTION ==================== -->
+    <section class="section" aria-labelledby="intro-heading">
+      <div class="container-wide">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-6">
+            <p class="eyebrow">Welcome</p>
+            <h2 id="intro-heading">Rooted in place, built for how you actually travel.</h2>
+            <p class="lead">The Amba Addis takes its name from the flat-topped highland plateaus that shape Ethiopia's landscape — a fitting namesake for a hotel built on quiet elevation above the everyday.</p>
+            <p>Set in the Kazanchis business district, minutes from Bole International Airport and the city's diplomatic quarter, we designed this hotel for guests who notice details: hand-finished furniture from regional workshops, a restaurant that treats Ethiopian coffee culture as the centerpiece it deserves to be, and service that remembers your name by the second morning.</p>
+            <a href="about.html" class="btn--ghost">Read our story</a>
+          </div>
+          <div class="col-12 col-lg-6">
+            <figure class="mb-0">
+              <img src="assets/images/intro-facade-2.avif" alt="Arrival courtyard and facade of The Amba Addis, illustrative placeholder photograph" width="1200" height="1400" loading="lazy" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== FEATURED ROOMS ==================== -->
+    <section class="section section--surface" aria-labelledby="rooms-heading">
+      <div class="container-wide">
+        <div class="section-header section-header--split">
+          <div>
+            <p class="eyebrow">Rooms &amp; Suites</p>
+            <h2 id="rooms-heading">Considered spaces, built for rest.</h2>
+          </div>
+          <a href="rooms.html" class="btn--ghost">View all rooms &amp; rates</a>
+        </div>
+
+        <div class="grid-auto" role="list">
+          <article class="card" role="listitem">
+            <div class="card__media">
+              <span class="card__badge">Most Booked</span>
+              <img src="assets/images/room-amba-king.webp" alt="Amba Room with king bed and city view, illustrative placeholder photograph" width="1000" height="750" loading="lazy">
+            </div>
+            <div class="card__body">
+              <p class="card__meta">Sleeps 2 · King Bed · 32 m²</p>
+              <h3 class="card__title"><a href="room-detail.html">Amba Room</a></h3>
+              <p class="text-muted">A calm, light-filled room with city views and a work nook suited to a short business stay or a first Addis visit.</p>
+              <div class="card__tags">
+                <span class="tag">City View</span>
+                <span class="tag">Free Wi-Fi</span>
+                <span class="tag">Rain Shower</span>
+              </div>
+              <div class="card__footer">
+                <p class="card__price">From ETB 5,500<span>per night, demo rate</span></p>
+                <a href="room-detail.html" class="btn--ghost">Explore Room</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="card__media">
+              <img src="assets/images/room-highland-suite.avif" alt="Highland Suite living area and king bed, illustrative placeholder photograph" width="1000" height="750" loading="lazy">
+            </div>
+            <div class="card__body">
+              <p class="card__meta">Sleeps 3 · King Bed · 54 m²</p>
+              <h3 class="card__title"><a href="room-detail.html">Highland Suite</a></h3>
+              <p class="text-muted">A separate living area, deep soaking tub, and a private balcony overlooking the Entoto hills.</p>
+              <div class="card__tags">
+                <span class="tag">Hill View</span>
+                <span class="tag">Balcony</span>
+                <span class="tag">Soaking Tub</span>
+              </div>
+              <div class="card__footer">
+                <p class="card__price">From ETB 9,800<span>per night, demo rate</span></p>
+                <a href="room-detail.html" class="btn--ghost">Explore Room</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="card__media">
+              <img src="assets/images/room-garden-twin.jpg" alt="Garden Twin Room with two beds and garden view, illustrative placeholder photograph" width="1000" height="750" loading="lazy">
+            </div>
+            <div class="card__body">
+              <p class="card__meta">Sleeps 2 · Twin Beds · 34 m²</p>
+              <h3 class="card__title"><a href="room-detail.html">Garden Twin Room</a></h3>
+              <p class="text-muted">Ground-floor rooms opening onto the courtyard garden — a favorite for colleagues traveling together.</p>
+              <div class="card__tags">
+                <span class="tag">Garden View</span>
+                <span class="tag">Ground Floor</span>
+                <span class="tag">Free Wi-Fi</span>
+              </div>
+              <div class="card__footer">
+                <p class="card__price">From ETB 5,900<span>per night, demo rate</span></p>
+                <a href="room-detail.html" class="btn--ghost">Explore Room</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="card__media">
+              <span class="card__badge">Signature</span>
+              <img src="assets/images/room-ras-suite.jpg" alt="Ras Suite with private terrace, illustrative placeholder photograph" width="1000" height="750" loading="lazy">
+            </div>
+            <div class="card__body">
+              <p class="card__meta">Sleeps 4 · King + Sofa Bed · 96 m²</p>
+              <h3 class="card__title"><a href="room-detail.html">Ras Suite</a></h3>
+              <p class="text-muted">Our largest suite: a private terrace, dining table for six, and a dedicated check-in host.</p>
+              <div class="card__tags">
+                <span class="tag">Private Terrace</span>
+                <span class="tag">Butler Service</span>
+                <span class="tag">Panoramic View</span>
+              </div>
+              <div class="card__footer">
+                <p class="card__price">From ETB 22,000<span>per night, demo rate</span></p>
+                <a href="room-detail.html" class="btn--ghost">Explore Room</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== DINING ==================== -->
+    <section class="section" aria-labelledby="dining-heading">
+      <div class="container-wide">
+        <div class="section-header section-header--split">
+          <div>
+            <p class="eyebrow">Dining</p>
+            <h2 id="dining-heading">Three rooms, one philosophy: honest ingredients.</h2>
+          </div>
+          <a href="dining.html" class="btn--ghost">View all dining</a>
+        </div>
+
+        <div class="grid-auto" role="list">
+          <article class="card" role="listitem">
+            <div class="card__media">
+              <img src="assets/images/dining-buna-vine.jpg" alt="Buna and Vine restaurant interior, illustrative placeholder photograph" width="1000" height="750" loading="lazy">
+            </div>
+            <div class="card__body">
+              <p class="card__meta">Ethiopian &amp; Contemporary · Dinner, Daily 6–11 PM</p>
+              <h3 class="card__title"><a href="restaurant-detail.html">Buna &amp; Vine</a></h3>
+              <p class="text-muted">Our signature restaurant pairs modern Ethiopian plates with a 300-label wine list, built around an open coffee-roasting counter.</p>
+              <a href="restaurant-detail.html" class="btn--ghost">View menu &amp; hours</a>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="card__media">
+              <img src="assets/images/dining-ridge.jpg" alt="The Ridge rooftop bar at sunset, illustrative placeholder photograph" width="1000" height="750" loading="lazy">
+            </div>
+            <div class="card__body">
+              <p class="card__meta">Rooftop Bar &amp; Small Plates · Daily 4 PM–Midnight</p>
+              <h3 class="card__title"><a href="restaurant-detail.html">The Ridge</a></h3>
+              <p class="text-muted">Cocktails built around Ethiopian gin and honey wine, with the best sunset view of the Entoto range in the city.</p>
+              <a href="restaurant-detail.html" class="btn--ghost">View menu &amp; hours</a>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="card__media">
+              <img src="assets/images/dining-enat-kitchen.jpg" alt="Enat Kitchen all-day dining room, illustrative placeholder photograph" width="1000" height="750" loading="lazy">
+            </div>
+            <div class="card__body">
+              <p class="card__meta">All-Day Dining · Daily 6 AM–10 PM</p>
+              <h3 class="card__title"><a href="restaurant-detail.html">Enat Kitchen</a></h3>
+              <p class="text-muted">Home-style Ethiopian classics and an internationally minded breakfast buffet, served in a bright courtyard-facing room.</p>
+              <a href="restaurant-detail.html" class="btn--ghost">View menu &amp; hours</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== AMENITIES / EXPERIENCES ==================== -->
+    <section class="section section--surface" aria-labelledby="amenities-heading">
+      <div class="container-wide">
+        <div class="section-header section-header--center">
+          <p class="eyebrow">Amenities</p>
+          <h2 id="amenities-heading">Everything a considered stay requires.</h2>
+          <p class="lead">A short list, done properly — not a long list done half-heartedly.</p>
+        </div>
+
+        <div class="grid-auto grid-experiences" role="list">
+          <article class="card" role="listitem">
+            <div class="card__media">
+              <img src="assets/images/amenity-spa.jpg" alt="Highland Spa treatment room, illustrative placeholder photograph" width="900" height="700" loading="lazy">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="amenities.html">Highland Spa</a></h3>
+              <p class="text-muted">Four treatment rooms, a steam room, and therapies drawing on regional botanicals.</p>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="card__media">
+              <img src="assets/images/amenity-pool.jpg" alt="Rooftop pool deck, illustrative placeholder photograph" width="900" height="700" loading="lazy">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="amenities.html">Rooftop Pool</a></h3>
+              <p class="text-muted">Heated year-round, with cabanas and full city views from the ninth floor.</p>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="card__media">
+              <img src="assets/images/amenity-fitness.jpg" alt="24-hour fitness studio, illustrative placeholder photograph" width="900" height="700" loading="lazy">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="amenities.html">Fitness Studio</a></h3>
+              <p class="text-muted">Open 24 hours, with a dedicated trainer available by request each morning.</p>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="card__media">
+              <img src="assets/images/amenity-business.webp" alt="Business centre and meeting room, illustrative placeholder photograph" width="900" height="700" loading="lazy">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="amenities.html">Business &amp; Events</a></h3>
+              <p class="text-muted">Three meeting rooms and a ballroom for up to 180 guests, with in-house AV support.</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="text-center mt-lg mb-0">
+          <a href="amenities.html" class="btn--ghost">See all amenities</a>
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==================== OFFERS ==================== -->
+    <section class="section" aria-labelledby="offers-heading">
+      <div class="container-wide">
+        <div class="section-header section-header--split">
+          <div>
+            <p class="eyebrow">Offers</p>
+            <h2 id="offers-heading">Packages worth planning a trip around.</h2>
+          </div>
+          <a href="offers.html" class="btn--ghost">View all offers</a>
+        </div>
+
+        <div class="grid-auto" role="list">
+          <article class="card" role="listitem">
+            <div class="card__media">
+              <img src="assets/images/offer-weekend.jpg" alt="Weekend Escape package, illustrative placeholder photograph" width="900" height="650" loading="lazy">
+            </div>
+            <div class="card__body">
+              <p class="card__meta">2-Night Minimum</p>
+              <h3 class="card__title"><a href="offer-detail.html">Weekend Escape</a></h3>
+              <p class="text-muted">Late checkout, a bottle of Ethiopian wine, and breakfast for two at Enat Kitchen.</p>
+              <div class="card__footer">
+                <p class="card__price">From ETB 10,500<span>per stay, demo rate</span></p>
+                <a href="offer-detail.html" class="btn--ghost">View Offer</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="card__media">
+              <img src="assets/images/offer-business.jpg" alt="Business Traveler package, illustrative placeholder photograph" width="900" height="650" loading="lazy">
+            </div>
+            <div class="card__body">
+              <p class="card__meta">Monday–Thursday</p>
+              <h3 class="card__title"><a href="offer-detail.html">Business Traveler Package</a></h3>
+              <p class="text-muted">Airport transfer, express laundry, and a private desk credit at the Business Centre.</p>
+              <div class="card__footer">
+                <p class="card__price">From ETB 6,900<span>per night, demo rate</span></p>
+                <a href="offer-detail.html" class="btn--ghost">View Offer</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="card__media">
+              <img src="assets/images/offer-honeymoon.webp" alt="Highland Honeymoon package, illustrative placeholder photograph" width="900" height="650" loading="lazy">
+            </div>
+            <div class="card__body">
+              <p class="card__meta">3-Night Minimum</p>
+              <h3 class="card__title"><a href="offer-detail.html">Highland Honeymoon</a></h3>
+              <p class="text-muted">A Highland Suite upgrade, private terrace dinner, and a guided coffee ceremony for two.</p>
+              <div class="card__footer">
+                <p class="card__price">From ETB 32,000<span>per stay, demo rate</span></p>
+                <a href="offer-detail.html" class="btn--ghost">View Offer</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== LOCATION ==================== -->
+    <section class="section section--surface" aria-labelledby="location-heading">
+      <div class="container-wide">
+        <div class="row g-5 align-items-center">
+          <div class="col-12 col-lg-6">
+            <p class="eyebrow">Location</p>
+            <h2 id="location-heading">Centrally placed, easy to reach.</h2>
+            <address class="prose">
+              The Amba Addis<br>
+              Kazanchis Business District, Ras Abebe Aregay Street<br>
+              Addis Ababa, Ethiopia<br>
+              Phone: <a href="tel:+251115550142">+251 11 555 0142</a><br>
+              Email: <a href="mailto:stay@theambaaddis.rann.workers.dev">stay@theambaaddis.rann.workers.dev</a>
+            </address>
+            <ul>
+              <li><strong>Bole International Airport (ADD):</strong> 15 minutes / 8 km</li>
+              <li><strong>Meskel Square:</strong> 5 minutes on foot</li>
+              <li><strong>National Museum of Ethiopia:</strong> 10 minutes by car</li>
+              <li><strong>UN Economic Commission for Africa:</strong> 6 minutes on foot</li>
+            </ul>
+            <a href="location.html" class="btn--ghost">Full location &amp; directions</a>
+          </div>
+          <div class="col-12 col-lg-6">
+            <figure class="mb-0 location-map">
+              <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=38.7425%2C9.0092%2C38.7625%2C9.0292&amp;layer=mapnik&amp;marker=9.0192%2C38.7525" title="Map showing The Amba Addis in Kazanchis Business District, Addis Ababa" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="section" aria-labelledby="testimonials-heading">
+      <div class="container-wide">
+        <div class="section-header section-header--center">
+          <p class="eyebrow">Guest Reviews</p>
+          <h2 id="testimonials-heading">What guests notice first.</h2>
+        </div>
+
+        <!-- These are DEMO TESTIMONIALS, not real guest reviews. -->
+        <div class="carousel" role="list" aria-label="Guest testimonials">
+          <figure class="testimonial" role="listitem">
+            <blockquote class="testimonial__quote">
+              <p>&ldquo;The kind of hotel where the staff remember how you take your coffee by day two. Quiet, well-designed, and genuinely local.&rdquo;</p>
+            </blockquote>
+            <figcaption class="testimonial__author"><strong>S. Bekele</strong> Business traveler, illustrative review</figcaption>
+          </figure>
+
+          <figure class="testimonial" role="listitem">
+            <blockquote class="testimonial__quote">
+              <p>&ldquo;Our suite's terrace at sunset was worth the trip alone. Breakfast at Enat Kitchen three days running and never got tired of it.&rdquo;</p>
+            </blockquote>
+            <figcaption class="testimonial__author"><strong>M. &amp; T. Osei</strong> Leisure guests, illustrative review</figcaption>
+          </figure>
+
+          <figure class="testimonial" role="listitem">
+            <blockquote class="testimonial__quote">
+              <p>&ldquo;Ran a two-day offsite in the Amba Ballroom — smooth AV, attentive events team, and dinner at Buna &amp; Vine sealed it.&rdquo;</p>
+            </blockquote>
+            <figcaption class="testimonial__author"><strong>R. Haile</strong> Events organizer, illustrative review</figcaption>
+          </figure>
+
+          <figure class="testimonial" role="listitem">
+            <blockquote class="testimonial__quote">
+              <p>&ldquo;Fifteen minutes from the airport but it felt worlds away from a typical airport hotel. Will be back.&rdquo;</p>
+            </blockquote>
+            <figcaption class="testimonial__author"><strong>J. Alemu</strong> Return guest, illustrative review</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== FINAL CTA ==================== -->
+    <section class="section section--primary text-center" aria-labelledby="final-cta-heading">
+      <div class="container-wide">
+        <p class="eyebrow" style="color: var(--color-accent-light);">Ready When You Are</p>
+        <h2 id="final-cta-heading">Your stay begins here.</h2>
+        <p class="lead" style="max-width: 560px; margin-inline: auto;">Rooms fill quickly during the dry season. Check availability and secure your dates in under a minute.</p>
+        <div class="hero__actions" style="justify-content: center;">
+          <a href="booking.html" class="btn btn--primary">Book Your Stay</a>
+          <a href="contact.html" class="btn btn--secondary">Contact Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container-wide">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand" style="color: #fff; margin-bottom: var(--space-sm);">
+            <img src="assets/icons/logo-mark.svg" alt="" width="36" height="36" class="brand__mark">
+            <span class="brand__name-full">The Amba Addis</span>
+          </a>
+          <address>
+            Kazanchis Business District<br>
+            Ras Abebe Aregay Street<br>
+            Addis Ababa, Ethiopia<br>
+            <a href="tel:+251115550142">+251 11 555 0142</a><br>
+            <a href="mailto:stay@theambaaddis.rann.workers.dev">stay@theambaaddis.rann.workers.dev</a>
+          </address>
+          <div class="footer-map">
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=38.7425%2C9.0092%2C38.7625%2C9.0292&amp;layer=mapnik&amp;marker=9.0192%2C38.7525" title="Map showing the approximate location of The Amba Addis in Addis Ababa" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <ul class="footer-social" aria-label="Social media">
+            <li><a href="https://instagram.com/theambaaddis" aria-label="The Amba Addis on Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="https://facebook.com/theambaaddis" aria-label="The Amba Addis on Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="https://linkedin.com/company/theambaaddis" aria-label="The Amba Addis on LinkedIn" target="_blank" rel="noopener"><i class="bi bi-linkedin" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+
+        <nav aria-label="Explore">
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="amenities.html">Amenities</a></li>
+            <li><a href="offers.html">Offers</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Hotel">
+          <h2>Hotel</h2>
+          <ul>
+            <li><a href="booking.html">Book Your Stay</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h2>Stay in Touch</h2>
+          <p class="text-muted" style="color: #A9B7BF;">Offers and highland stories, a few times a year — no more.</p>
+          <form class="newsletter-form" action="#" method="post" data-success-message="Thanks for subscribing — you're on the list.">
+            <label for="footer-newsletter-email" class="visually-hidden">Email address</label>
+            <input type="email" id="footer-newsletter-email" name="email" placeholder="you@example.com" required>
+            <button type="submit" class="btn btn--primary">Sign Up</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; 2026 The Amba Addis.</p>
+        <ul class="footer-legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

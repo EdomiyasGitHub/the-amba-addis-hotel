@@ -1,0 +1,15 @@
+{
+  "name": "the-amba-addis",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "The Amba Addis — boutique hotel website, static frontend + Cloudflare Worker reservation/payment API.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

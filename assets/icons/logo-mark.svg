@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">The Amba Addis logo mark — stylized highland plateau</title>
+  <circle cx="24" cy="24" r="23" fill="#26333F"/>
+  <path d="M8 30 L18 14 L24 22 L30 12 L40 30 Z" fill="#BF6B4D"/>
+  <path d="M8 30 L18 14 L20.5 17.7 L13 30 Z" fill="#E0A588"/>
+  <path d="M24 22 L30 12 L34.5 19.2 L28.5 30 L21 30 Z" fill="#6E8494"/>
+  <rect x="6" y="30" width="36" height="3" rx="1.5" fill="#F4F5F5"/>
+</svg>

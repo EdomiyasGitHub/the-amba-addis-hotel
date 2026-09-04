@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ==================== HEAD ==================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservation Status | The Amba Addis</title>
+  <meta name="description" content="Confirm the status of your reservation and payment at The Amba Addis.">
+  <link rel="canonical" href="https://theambaaddis.rann.workers.dev/booking-confirmation.html">
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Amba Addis">
+  <meta property="og:title" content="Reservation Status | The Amba Addis">
+  <meta property="og:description" content="Confirm the status of your reservation and payment at The Amba Addis.">
+  <meta property="og:image" content="https://theambaaddis.rann.workers.dev/assets/images/og-default.svg">
+  <meta property="og:url" content="https://theambaaddis.rann.workers.dev/booking-confirmation.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo-mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!--
+    This page is the Chapa return_url target. Chapa redirects the guest's browser here with
+    ?tx_ref=... once they finish (or abandon) checkout on Chapa's hosted
+    page. The script at the bottom calls GET /api/verify?tx_ref=... to confirm the real payment status server-side.
+  -->
+</head>
+
+
+<!-- ==================== BODY ==================== -->
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="container-wide site-header__inner">
+      <a href="index.html" class="brand" aria-label="The Amba Addis — home">
+        <img src="assets/icons/logo-mark.svg" alt="" width="40" height="40" class="brand__mark">
+        <span class="brand__name-full">The Amba Addis <small>Addis&nbsp;Ababa</small></span>
+      </a>
+
+      <button type="button" class="nav-toggle" data-bs-toggle="collapse" data-bs-target="#primary-navigation" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+
+      <nav class="primary-nav collapse" id="primary-navigation" aria-label="Primary">
+        <ul class="primary-nav__list">
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="amenities.html">Amenities</a></li>
+          <li><a href="offers.html">Offers</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="booking.html" class="btn btn--primary header-cta">Book Your Stay</a>
+    </div>
+  </header>
+
+
+  <!-- ==================== MAIN ==================== -->
+  <main id="main">
+
+    <!-- ==================== PAGE HERO ==================== -->
+    <section class="hero" style="min-height: 32vh;">
+      <div class="container-wide hero__content">
+        <p class="eyebrow">Reservations</p>
+        <h1 id="status-heading">Checking your reservation…</h1>
+        <p class="lead" id="status-lead">One moment while we confirm your payment with Chapa.</p>
+      </div>
+    </section>
+
+
+    <div class="container-wide">
+      <nav class="breadcrumb-wrap" aria-label="Breadcrumb">
+        <ol class="breadcrumb" style="margin-top: var(--space-lg);">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="booking.html">Book Your Stay</a></li>
+          <li>Reservation Status</li>
+        </ol>
+      </nav>
+    </div>
+
+
+    <!-- ==================== STATUS PANEL ==================== -->
+    <section class="section--tight">
+      <div class="container-wide">
+        <div class="row">
+          <div class="col-12 col-lg-7">
+
+            <div class="booking-widget" id="status-panel">
+              <h2 style="font-size: var(--fs-h4);" id="status-panel-heading">Confirming…</h2>
+              <p id="status-panel-body">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Reaching out to Chapa to confirm your payment. This usually takes a second.
+              </p>
+
+              <ul class="order-summary" id="status-summary" hidden>
+                <li><span>Reference</span><span id="summary-ref">—</span></li>
+                <li><span>Room</span><span id="summary-room">—</span></li>
+                <li><span>Dates</span><span id="summary-dates">—</span></li>
+                <li><span>Guest</span><span id="summary-guest">—</span></li>
+                <li class="order-summary__total"><span>Amount</span><span id="summary-amount">—</span></li>
+              </ul>
+            </div>
+
+            <p class="form-error" id="status-error" role="alert" hidden>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <span></span>
+            </p>
+
+            <p class="mt-lg">
+              Questions about your reservation? <a href="contact.html">Contact us</a> or call
+              <a href="tel:+251115550142">+251 11 555 0142</a> and reference your booking above.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container-wide">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand" style="color: #fff; margin-bottom: var(--space-sm);">
+            <img src="assets/icons/logo-mark.svg" alt="" width="36" height="36" class="brand__mark">
+            <span class="brand__name-full">The Amba Addis</span>
+          </a>
+          <address>
+            Kazanchis Business District<br>
+            Ras Abebe Aregay Street<br>
+            Addis Ababa, Ethiopia<br>
+            <a href="tel:+251115550142">+251 11 555 0142</a><br>
+            <a href="mailto:stay@theambaaddis.rann.workers.dev">stay@theambaaddis.rann.workers.dev</a>
+          </address>
+          <div class="footer-map">
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=38.7425%2C9.0092%2C38.7625%2C9.0292&amp;layer=mapnik&amp;marker=9.0192%2C38.7525" title="Map showing the approximate location of The Amba Addis in Addis Ababa" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <ul class="footer-social" aria-label="Social media">
+            <li><a href="https://instagram.com/theambaaddis" aria-label="The Amba Addis on Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="https://facebook.com/theambaaddis" aria-label="The Amba Addis on Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="https://linkedin.com/company/theambaaddis" aria-label="The Amba Addis on LinkedIn" target="_blank" rel="noopener"><i class="bi bi-linkedin" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+
+        <nav aria-label="Explore">
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="amenities.html">Amenities</a></li>
+            <li><a href="offers.html">Offers</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Hotel">
+          <h2>Hotel</h2>
+          <ul>
+            <li><a href="booking.html">Book Your Stay</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h2>Stay in Touch</h2>
+          <p class="text-muted" style="color: #A9B7BF;">Offers and highland stories, a few times a year — no more.</p>
+          <form class="newsletter-form" action="#" method="post" data-success-message="Thanks for subscribing — you're on the list.">
+            <label for="footer-newsletter-email" class="visually-hidden">Email address</label>
+            <input type="email" id="footer-newsletter-email" name="email" placeholder="you@example.com" required>
+            <button type="submit" class="btn btn--primary">Sign Up</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; 2026 The Amba Addis.</p>
+        <ul class="footer-legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+  <script>
+    // This logic is kept out of main.js since it only applies to this one page and reads directly from worker/src/index.js's response shape
+    (function () {
+      "use strict";
+
+    // Grabbing all the elements on the page we'll need to update once we know what happened with the payment.
+    var heading = document.getElementById("status-heading");
+    var lead = document.getElementById("status-lead");
+    var panel = document.getElementById("status-panel");
+    var panelHeading = document.getElementById("status-panel-heading");
+    var panelBody = document.getElementById("status-panel-body");
+    var summary = document.getElementById("status-summary");
+    var errorBox = document.getElementById("status-error");
+    var errorText = errorBox ? errorBox.querySelector("span") : null;
+
+
+    // Simple ETB currency formatter, e.g. 1500 -> "ETB 1,500"
+    var formatETB = function (amount) {
+      return "ETB " + Number(amount || 0).toLocaleString("en-US");
+    };
+
+
+    // Revealing the error box (hidden by default) and dropping a message into it
+    var showError = function (message) {
+      if (errorText) errorText.textContent = message;
+      if (errorBox) errorBox.hidden = false;
+    };
+
+
+    // Filling in the booking summary card once we have reservation data back
+    var fillSummary = function (reservation) {
+      if (!reservation) return;
+      document.getElementById("summary-ref").textContent = reservation.txRef || "—";
+      document.getElementById("summary-room").textContent = reservation.roomName || "—";
+      document.getElementById("summary-dates").textContent =
+        (reservation.checkin || "—") + " → " + (reservation.checkout || "—");
+      document.getElementById("summary-guest").textContent =
+        reservation.guest && reservation.guest.name ? reservation.guest.name : "—";
+      document.getElementById("summary-amount").textContent = formatETB(reservation.amount);
+      if (summary) summary.hidden = false;
+    };
+
+
+    // Chapa redirects back to this page with ?tx_ref=... after checkout, so that's what we use to look up the reservation
+    var params = new URLSearchParams(window.location.search);
+    var txRef = params.get("tx_ref");
+
+
+    // If someone lands on this page without a tx_ref (without bookmarking or navigating here directly), bailing early with a message
+    if (!txRef) {
+      heading.textContent = "No reservation reference found.";
+      lead.textContent = "This page confirms a booking after Chapa checkout — it looks like you've landed here directly.";
+      panelHeading.textContent = "Nothing to confirm";
+      panelBody.textContent = "If you were just completing a payment, check your email for a confirmation, or contact us with your details.";
+      return;
+    }
+
+
+    // Always verifying again the payment status with our own backend, which checks with Chapa directly bc we shouldn't directly trust a URL. This keeps
+    // someone from spoofing a "success" state just by editing the query string
+    fetch("/api/verify?tx_ref=" + encodeURIComponent(txRef))
+      .then(function (response) {
+        // If the response isn't valid JSON for some reason, falling back to
+        // an empty object rather than throwing here.
+        return response.json().catch(function () {
+          return {};
+        });
+      })
+      .then(function (data) {
+        // Backend didn't find a matching reservation at all
+        if (!data || !data.reservation) {
+          heading.textContent = "We couldn't find that reservation.";
+          lead.textContent = "Double-check the link, or contact us directly with your reference: " + txRef;
+          panelHeading.textContent = "Not found";
+          panelBody.textContent = data && data.error ? data.error : "No reservation matches this reference.";
+          return;
+        }
+
+
+        var reservation = data.reservation;
+        fillSummary(reservation);
+
+
+        // Three possible states coming back from Chapa/our backend:
+        // confirmed, failed, or still pending (e.g. bank transfers take a bit)
+        if (reservation.status === "confirmed") {
+          heading.textContent = "You're all set.";
+          lead.textContent = "Your payment was confirmed and your room is held. A confirmation has been sent to " + (reservation.guest && reservation.guest.email ? reservation.guest.email : "your email") + ".";
+          panelHeading.textContent = "Payment confirmed";
+          panelBody.textContent = "Thank you for booking with The Amba Addis — we look forward to welcoming you.";
+        } else if (reservation.status === "failed") {
+          heading.textContent = "Payment wasn't completed.";
+          lead.textContent = "Your room hasn't been held. You can return to booking to try again.";
+          panelHeading.textContent = "Payment failed";
+          panelBody.textContent = "Chapa reported this transaction as unsuccessful. No charge should have been made — please try again from the booking page.";
+          showError("If you believe this is an error, contact us with reference " + txRef + ".");
+        } else {
+          
+          // Catch-all for "pending" or any other in-between status
+          heading.textContent = "Payment is still processing.";
+          lead.textContent = "This can take a minute, especially for bank transfers. Refresh this page shortly to check again.";
+          panelHeading.textContent = "Pending confirmation";
+          panelBody.textContent = (data.note ? data.note + " " : "") + "We'll also confirm by email as soon as this clears.";
+        }
+      })
+      .catch(function () {
+
+        // Network error, or the /api/verify endpoint isn't up yet (e.g. this
+        // page is being previewed without the Cloudflare Worker running).
+        heading.textContent = "Couldn't check your reservation status.";
+        lead.textContent = "This preview may not be running behind the Cloudflare Worker yet (see DEPLOYMENT.md), or you may be offline.";
+        panelHeading.textContent = "Status unavailable";
+        panelBody.textContent = "Please try again, or contact us directly with reference " + txRef + ".";
+      });
+    })();
+  </script>
+</body>
+</html>

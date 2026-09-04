@@ -1,0 +1,42 @@
+{
+  // Cloudflare Workers configuration for The Amba Addis.
+  //
+  // This project uses "Workers + Static Assets" — the modern, unified way
+  // to serve a static site alongside a bit of server-side logic from one
+  // Worker (it has replaced Cloudflare Pages for new projects). The Worker
+  // at worker/src/index.js serves the JSON API under /api/* and falls
+  // through to the ASSETS binding (this whole directory) for everything
+  // else, which is why the deployed URL is a single origin —
+  // theambaaddis.rann.workers.dev — for both the site and its API.
+  //
+  // See DEPLOYMENT.md for the full first-deploy walkthrough (KV namespace
+  // creation, setting the Chapa secret, `wrangler deploy`).
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "theambaaddis",
+  "main": "worker/src/index.js",
+  "compatibility_date": "2026-08-01",
+  "compatibility_flags": ["nodejs_compat"],
+
+  "assets": {
+    // Serve the whole project root as static assets, except the files
+    // listed in .assetsignore (the Worker source, config, and docs).
+    "directory": "./",
+    "binding": "ASSETS"
+  },
+
+  "kv_namespaces": [
+    {
+      // Reservation records, keyed by Chapa tx_ref. Create this namespace
+      // with `wrangler kv namespace create RESERVATIONS` and paste the id
+      // it prints below — see DEPLOYMENT.md. The placeholder below will
+      // not work as-is.
+      "binding": "RESERVATIONS",
+      "id": "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+    }
+  ]
+
+  // CHAPA_SECRET_KEY is intentionally NOT here — secrets never belong in
+  // a checked-in config file. Set it with:
+  //   wrangler secret put CHAPA_SECRET_KEY
+  // (run that yourself, in your own terminal — see DEPLOYMENT.md).
+}

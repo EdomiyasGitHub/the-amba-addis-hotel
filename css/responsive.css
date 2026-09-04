@@ -1,0 +1,196 @@
+/* ==========================================================================
+   THE AMBA ADDIS — RESPONSIVE OVERRIDES
+   ==========================================================================
+   Mobile-first: css/style.css defines the base (mobile) layout with no
+   media queries. This file progressively enhances the layout as viewport
+   width increases. Loaded after style.css in every page's <head>.
+
+   Breakpoints (matches Bootstrap 5's grid so the two systems stay in sync):
+     ≥576px   small / large phones, landscape
+     ≥768px   tablets
+     ≥992px   laptops
+     ≥1200px  desktops
+     ≥1440px  large desktops
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   ≥576px — small
+   -------------------------------------------------------------------------- */
+@media (min-width: 576px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .booking-bar__form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   ≥768px — tablets
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .container-wide {
+    padding-inline: var(--space-lg);
+  }
+
+  /* Header switches from stacked/collapsed to a single horizontal bar */
+  .site-header__inner {
+    flex-wrap: nowrap;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .primary-nav {
+    display: block !important;
+    width: auto;
+    flex-grow: 1;
+  }
+
+  .primary-nav__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 0;
+    gap: var(--space-2xs);
+  }
+
+  .header-cta {
+    display: inline-flex;
+    flex-shrink: 0;
+  }
+
+  .hero {
+    min-height: 86vh;
+  }
+
+  .hero__content {
+    padding-block: var(--space-2xl) var(--space-xl);
+  }
+
+  .booking-bar {
+    padding: var(--space-lg);
+  }
+
+  .booking-bar__form {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .form-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .form-grid--contact {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   ≥992px — laptops
+   -------------------------------------------------------------------------- */
+@media (min-width: 992px) {
+  .primary-nav__list {
+    gap: var(--space-md);
+  }
+
+  .booking-bar__form {
+    grid-template-columns: repeat(5, 1fr) auto;
+  }
+
+  .booking-bar__submit {
+    grid-column: auto;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  }
+
+  .section-header--center {
+    max-width: 620px;
+  }
+
+  .room-detail-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+  }
+
+  .room-detail-layout aside {
+    position: sticky;
+    top: calc(var(--space-lg) + 64px);
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   ≥1200px — desktops
+   -------------------------------------------------------------------------- */
+@media (min-width: 1200px) {
+  .hero__content {
+    max-width: 720px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .carousel > * {
+    width: 400px;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   ≥1440px — large desktops
+   -------------------------------------------------------------------------- */
+@media (min-width: 1440px) {
+  :root {
+    --container-max: 1360px;
+  }
+
+  .hero {
+    min-height: 90vh;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   Print — booking/legal pages should remain useful on paper
+   -------------------------------------------------------------------------- */
+@media print {
+  .site-header,
+  .booking-bar,
+  .hero__actions,
+  .site-footer,
+  .nav-toggle {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+}

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ==================== HEAD ==================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | The Amba Addis, Addis Ababa</title>
+  <meta name="description" content="Reach The Amba Addis by phone, email, or the form below. Reservations, front desk, and general enquiries for our Addis Ababa boutique hotel.">
+  <link rel="canonical" href="https://theambaaddis.rann.workers.dev/contact.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Amba Addis">
+  <meta property="og:title" content="Contact Us | The Amba Addis">
+  <meta property="og:description" content="Reservations, front desk, and general enquiries for The Amba Addis boutique hotel in Addis Ababa.">
+  <meta property="og:image" content="https://theambaaddis.rann.workers.dev/assets/images/og-default.svg">
+  <meta property="og:url" content="https://theambaaddis.rann.workers.dev/contact.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo-mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+
+<!-- ==================== BODY ==================== -->
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="container-wide site-header__inner">
+      <a href="index.html" class="brand" aria-label="The Amba Addis — home">
+        <img src="assets/icons/logo-mark.svg" alt="" width="40" height="40" class="brand__mark">
+        <span class="brand__name-full">The Amba Addis <small>Addis&nbsp;Ababa</small></span>
+      </a>
+
+      <button type="button" class="nav-toggle" data-bs-toggle="collapse" data-bs-target="#primary-navigation" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+
+      <nav class="primary-nav collapse" id="primary-navigation" aria-label="Primary">
+        <ul class="primary-nav__list">
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="amenities.html">Amenities</a></li>
+          <li><a href="offers.html">Offers</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="booking.html" class="btn btn--primary header-cta">Book Your Stay</a>
+    </div>
+  </header>
+
+
+  <!-- ==================== MAIN ==================== -->
+  <main id="main">
+
+    <!-- ==================== PAGE HERO ==================== -->
+    <section class="hero" style="min-height: 38vh;">
+      <div class="container-wide hero__content">
+        <p class="eyebrow">Contact</p>
+        <h1>We're here to help.</h1>
+        <p class="lead">Reservations, front desk, or a general question — reach us however is easiest.</p>
+      </div>
+    </section>
+
+
+    <div class="container-wide">
+      <nav class="breadcrumb-wrap" aria-label="Breadcrumb">
+        <ol class="breadcrumb" style="margin-top: var(--space-lg);">
+          <li><a href="index.html">Home</a></li>
+          <li>Contact</li>
+        </ol>
+      </nav>
+    </div>
+
+
+    <!-- ==================== CONTACT FORM + INFO ==================== -->
+    <section class="section--tight" aria-labelledby="contact-heading">
+      <div class="container-wide">
+        <div class="row g-5">
+          <div class="col-12 col-lg-7">
+            <p class="eyebrow">Send a Message</p>
+            <h2 id="contact-heading">Get in touch</h2>
+
+            <!-- Not yet wired to a real backend -->
+            <form class="form-grid form-grid--contact" action="#" method="post" data-success-message="Thanks for reaching out — we've received your message and will reply soon.">
+              <div class="form-field">
+                <label for="ct-name">Full name</label>
+                <input type="text" id="ct-name" name="name" autocomplete="name" required>
+              </div>
+              <div class="form-field">
+                <label for="ct-email">Email address</label>
+                <input type="email" id="ct-email" name="email" autocomplete="email" required>
+              </div>
+              <div class="form-field">
+                <label for="ct-phone">Phone <span class="text-muted">(optional)</span></label>
+                <input type="tel" id="ct-phone" name="phone" autocomplete="tel">
+              </div>
+              <div class="form-field">
+                <label for="ct-subject">Subject</label>
+                <select id="ct-subject" name="subject">
+                  <option value="general" selected>General Enquiry</option>
+                  <option value="reservations">Reservations</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="press">Press &amp; Media</option>
+                  <option value="accessibility">Accessibility Request</option>
+                </select>
+              </div>
+              <div class="form-field" style="grid-column: 1 / -1;">
+                <label for="ct-message">Message</label>
+                <textarea id="ct-message" name="message" required></textarea>
+              </div>
+              <div class="checkbox-row" style="grid-column: 1 / -1;">
+                <input type="checkbox" id="ct-consent" name="consent" required>
+                <label for="ct-consent">I agree to be contacted about my enquiry.</label>
+              </div>
+              <div style="grid-column: 1 / -1;">
+                <button type="submit" class="btn btn--primary">Send Message</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-12 col-lg-5">
+            <div class="grid-auto grid-auto--narrow" style="grid-template-columns: 1fr; gap: var(--space-md);">
+              <div class="info-tile">
+                <span class="icon-circle" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92Z"/></svg>
+                </span>
+                <div>
+                  <h3>Phone</h3>
+                  <p><a href="tel:+251115550142">+251 11 555 0142</a></p>
+                </div>
+              </div>
+              <div class="info-tile">
+                <span class="icon-circle" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                </span>
+                <div>
+                  <h3>Email</h3>
+                  <p><a href="mailto:stay@theambaaddis.rann.workers.dev">stay@theambaaddis.rann.workers.dev</a></p>
+                </div>
+              </div>
+              <div class="info-tile">
+                <span class="icon-circle" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <div>
+                  <h3>Address</h3>
+                  <p>Kazanchis Business District<br>Ras Abebe Aregay Street<br>Addis Ababa, Ethiopia</p>
+                </div>
+              </div>
+              <div class="info-tile">
+                <span class="icon-circle" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </span>
+                <div>
+                  <h3>Front Desk Hours</h3>
+                  <p>Open 24 hours, every day</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== DEPARTMENTS ==================== -->
+    <section class="section section--surface" aria-labelledby="departments-heading">
+      <div class="container-wide">
+        <div class="section-header">
+          <p class="eyebrow">Direct Lines</p>
+          <h2 id="departments-heading">Reach a department directly</h2>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="data-table">
+            <caption class="visually-hidden">Direct contact details by hotel department</caption>
+            <thead>
+              <tr>
+                <th scope="col">Department</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Reservations</th>
+                <td><a href="tel:+251115550143">+251 11 555 0143</a></td>
+                <td><a href="mailto:reservations@theambaaddis.rann.workers.dev">reservations@theambaaddis.rann.workers.dev</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Front Desk</th>
+                <td><a href="tel:+251115550142">+251 11 555 0142</a></td>
+                <td><a href="mailto:stay@theambaaddis.rann.workers.dev">stay@theambaaddis.rann.workers.dev</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Concierge</th>
+                <td><a href="tel:+251115550144">+251 11 555 0144</a></td>
+                <td><a href="mailto:concierge@theambaaddis.rann.workers.dev">concierge@theambaaddis.rann.workers.dev</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Press &amp; Media</th>
+                <td>—</td>
+                <td><a href="mailto:press@theambaaddis.rann.workers.dev">press@theambaaddis.rann.workers.dev</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== FINAL CTA ==================== -->
+    <section class="section text-center" aria-labelledby="contact-cta-heading">
+      <div class="container-wide">
+        <h2 id="contact-cta-heading">Prefer to just check dates?</h2>
+        <p class="lead" style="max-width: 560px; margin-inline: auto;">Skip the form and check availability directly.</p>
+        <div class="hero__actions" style="justify-content: center;">
+          <a href="booking.html" class="btn btn--primary">Book Your Stay</a>
+          <a href="location.html" class="btn btn--secondary">Get Directions</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container-wide">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand" style="color: #fff; margin-bottom: var(--space-sm);">
+            <img src="assets/icons/logo-mark.svg" alt="" width="36" height="36" class="brand__mark">
+            <span class="brand__name-full">The Amba Addis</span>
+          </a>
+          <address>
+            Kazanchis Business District<br>
+            Ras Abebe Aregay Street<br>
+            Addis Ababa, Ethiopia<br>
+            <a href="tel:+251115550142">+251 11 555 0142</a><br>
+            <a href="mailto:stay@theambaaddis.rann.workers.dev">stay@theambaaddis.rann.workers.dev</a>
+          </address>
+          <div class="footer-map">
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=38.7425%2C9.0092%2C38.7625%2C9.0292&amp;layer=mapnik&amp;marker=9.0192%2C38.7525" title="Map showing the approximate location of The Amba Addis in Addis Ababa" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <ul class="footer-social" aria-label="Social media">
+            <li><a href="https://instagram.com/theambaaddis" aria-label="The Amba Addis on Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="https://facebook.com/theambaaddis" aria-label="The Amba Addis on Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="https://linkedin.com/company/theambaaddis" aria-label="The Amba Addis on LinkedIn" target="_blank" rel="noopener"><i class="bi bi-linkedin" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+
+        <nav aria-label="Explore">
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="amenities.html">Amenities</a></li>
+            <li><a href="offers.html">Offers</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Hotel">
+          <h2>Hotel</h2>
+          <ul>
+            <li><a href="booking.html">Book Your Stay</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h2>Stay in Touch</h2>
+          <p class="text-muted" style="color: #A9B7BF;">Offers and highland stories, a few times a year — no more.</p>
+          <form class="newsletter-form" action="#" method="post" data-success-message="Thanks for subscribing — you're on the list.">
+            <label for="footer-newsletter-email" class="visually-hidden">Email address</label>
+            <input type="email" id="footer-newsletter-email" name="email" placeholder="you@example.com" required>
+            <button type="submit" class="btn btn--primary">Sign Up</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; 2026 The Amba Addis.</p>
+        <ul class="footer-legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
